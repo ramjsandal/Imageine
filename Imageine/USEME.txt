@@ -1,0 +1,82 @@
+# USEME
+
+## Script Commands
+
+### Note:
+* Syntax denotes the format of the command to be inputted into the program. 
+* Example denotes a sample code snippet that can be successfully inputted into the program via the supplied jar file.
+	* The q, Q, quit, or Quit supplied in every Example is such that the program terminates after being called. If multiple script commands are to be called, negate the q. 
+* IMPORTANT: Before any commands asides help and quit, an image-file must be loaded first. Once an image is loaded, you don’t need to re-load the image for each command as the file remains in the program until the program is terminated. However, if two files are saved in the program with the same name, then the older file will be overridden and you must re-load the original picture to perform operations on the original picture. 
+
+- Help Command
+	- Syntax:  help
+		- Outputs the list of commands that our program has. 
+	- Example: help q
+		- Outputs the list of commands.
+
+- Quit Command
+	- Syntax: One of ‘q’, ‘Q’, “quit”, or “Quit”
+		- Explanation: Any of the four enumerated syntaxes above can be used to quit the program. 
+	- Example: Q 
+		- Explanation: Quits the program. 
+
+- Load Command
+	- Note: The user (you) must load a file into the program before calling the various processing operations that are listed below (e.g. transform, filter, brighten, etc.). If unclear, this thought will be echoed through the example snippet goes provided for each command that requires a file to be loaded as a prerequisite to the execution of the command.
+	- Syntax: load file-path file-name
+		- Explanation: Loads a file at the path ‘file-path’ as ‘file-name’. 
+	- Example: load monster.ppm monsterLoaded quit
+		- Explanation: loads the file ‘monster.ppm’ as ‘monsterLoaded’ in the program
+
+- Save Command
+	- Note: Must have a loaded file to use. To do so, use the load command before executing the save command. You may save files as other file types. In specific, one of: JPEG, PNG, PPM, or BMP. Specify the file-type at the end of the file-path (e.g. file-path.jpeg or file-path.ppm). 
+	- Syntax: save file-path file-name
+		- Explanation: Saves a file in the program ‘file-name’ to the location ‘file-path’. 
+	- Example:  load monster.ppm monsterLoaded save monsterSaved.png monsterLoaded
+		- After loading monster.ppm as monsterLoaded, we save monsterLoaded as monsterSaved.png. As observable, we are able to save the original ppm file as another file type which in this case was png.
+	- Example2: brighten 10 monsterLoaded monsterLoadedBrightened save monsterBrightened.bmp monsterLoadedBrightened Quit
+		- Since the loaded file remains in the program, we are able to use it for other operations. We are also able to save the original ppm file as another file type which in this case was bmp. 
+
+- Filter command
+	- Note: Must have a loaded file to use. To do so, use the load command before executing the filter command. This command does not save the result of the operation as a file on your system. Rather, as a file in the program. Save must be called to save the file from the program onto your system. 
+	- Syntax: filter filter-type image-name dest-image-name
+		- Explanation: Creates a filtered version of the loaded file within the program ‘image-name’ as ‘dest-image-name’ using the filter ‘filter-type’. As of this version, filter-type can be one of ‘blur’ or ‘sharpen’. 
+	- Example: load monster.ppm monsterLoaded filter blur monsterLoaded monsterLoadedBlurred q
+		- Explanation: Loaded monster.ppm as monsterLoaded. Then, applies the blur filter on monsterLoaded and saves it in the program as monsterLoadedBlurred.
+
+- Transform command
+	- Note: Must have a loaded file to use. To do so, use the load command before executing the transform command. This command does not save the result of the operation as a file on your system. Rather, as a file in the program. Save must be called to save the file from the program onto your system.
+	- Syntax: transform transform-type image-name dest-image-name
+		- Explanation: Creates a transformed version of the loaded file within the program ‘image-name’ as ‘dest-image-name’ using the transform ‘transform-type’. As of this version, transform-type can be one of ‘greyscale’ or ‘sepia’. 
+	- Example: load monster.ppm monsterLoaded transform sepia monsterLoaded monsterLoadedSepia Q
+		- Explanation: Loaded monster.ppm as monsterLoaded. Then, transforms the image using sepia and saves it in the program as monsterLoadedSepia. 
+
+- Greyscale command
+	- Note: Must have a loaded file to use. To do so, use the load command before executing the greyscale command. This command does not save the result of the operation as a file on your system. Rather, as a file in the program. Save must be called to save the file from the program onto your system.
+	- Syntax: greyscale component image-name dest-name
+		- Explanation: Creates a greyscale version of the loaded file within the program ‘image-name’ as ‘dest-image-name’ according to the ‘component’ supplied. As of this version, component can be one of: ‘red’, ‘green’, ‘blue’, ‘value’, ‘intensity’, or ‘luma’. 
+	- Example: load monster.png monsterLoaded greyscale value monsterLoaded monsterLoadedGreyscaleValue q
+		- Explanation: Loads monster.png as monsterLoaded. Then, greyscales the image using the value component and saves it in the program as monsterLoadedGreyscaleValue. 
+
+- Brighten command 
+	- Note: Must have a loaded file to use. To do so, use the load command before executing the greyscale command. This command does not save the result of the operation as a file on your system. Rather, as a file in the program. Save must be called to save the file from the program onto your system.
+	- Syntax: brighten increment image-name dest-image-name
+		- Explanation: Creates a brightened version of the loaded file within the program ‘image-name’ as ‘dest-image-name’ according to the increment supplied. If the increment is a positive integer (must be integer), it brightens each pixel of the file as such. If the increment is a negative number, it dims each pixel of the file as such. There exists a clamp on this operation in that a pixel’s maximum value can’t be larger than 255, and minimum value can’t be smaller than 0. 
+	- Example: load monster.jpeg monsterLoaded brighten 10 monsterLoaded monsterLoadedBrightened 
+		- Explanation: loads monster.jpeg as monsterLoaded in the program. Then, brightens each pixel of monsterLoaded by an increment of 10 and saves the result in the program as monsterLoadedBrightened. 
+	- Example2: brighten -20 monsterLoadedBrightened monsterLoadedBrightenedThenDimmed quit
+		- Explanation: Since we have already loaded a file and have files saved in the program, we don’t need to load it again. Therefore, this example dims the pixels of the previously made image monsterLoadedBrightened by an increment of 20 and then saves it in the program as monsterLoadedBrightenedThenDimmed.
+
+- Vertical-flip command
+	- Note: Must have a loaded file to use. To do so, use the load command before executing the greyscale command. This command does not save the result of the operation as a file on your system. Rather, as a file in the program. Save must be called to save the file from the program onto your system.
+	- Syntax: vertical-flip image-name dest-image-name
+		- Explanation: Creates a vertically-flipped version of the loaded file within the program ‘image-name’ as ‘dest-image-name’. 
+	- Example: load monster.ppm monsterLoaded vertical-flip monsterLoaded monsterLoadedVerticallyFlipped q
+		- Explanation: Loads the file monster.ppm as monsterLoaded within the program. Then, vertically flips monsterLoaded and saves the result in the program as monsterLoadedVerticallyFlipped.
+
+- Horizontal-flip command
+	- Note: Must have a loaded file to use. To do so, use the load command before executing the greyscale command. This command does not save the result of the operation as a file on your system. Rather, as a file in the program. Save must be called to save the file from the program onto your system.
+	- Syntax: horizontal-flip image-name dest-image-name
+		- Explanation: Creates a horizontally-flipped version of the loaded file within the program ‘image-name’ as ‘dest-image-name’.
+	- Example: load monster.png monsterLoaded horizontal-flip monsterLoaded monsterLoadedHorizontallyFlipped q
+		- Explanation: Loads the file monster.png as monsterLoaded within the program. Then, horizontally flips monsterLoaded and saves the result in the program as monsterLoadedHorizontallyFlipped. 	
+
