@@ -1,0 +1,3 @@
+load test/testFiles/drake.jpeg drake
+greyscale red drake redDrake
+save test/testFiles/testScript.png redDrake q
