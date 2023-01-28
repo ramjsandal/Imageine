@@ -1,0 +1,67 @@
+help
+load monster.jpeg jpegLoad
+load monster.png pngLoad 
+load monster.bmp bmpLoad
+load monster.ppm ppmLoad
+filter blur jpegLoad jpegLoadBlur
+filter blur pngLoad pngLoadBlur
+filter blur bmpLoad bmpLoadBlur
+filter blur ppmLoad ppmLoadBlur 
+filter sharpen jpegLoad jpegLoadSharpen
+filter sharpen pngLoad pngLoadSharpen
+filter sharpen bmpLoad bmpLoadSharpen
+filter sharpen ppmLoad ppmLoadSharpen
+transform sepia jpegLoad jpegLoadSepia
+transform sepia pngLoad pngLoadSepia
+transform sepia bmpLoad bmpLoadSepia
+transform sepia ppmLoad ppmLoadSepia
+transform greyscale jpegLoadSepia jpegLoadGreyscale
+transform greyscale pngLoadSepia pngLoadGreyscale
+transform greyscale bmpLoadSepia bmpLoadGreyscale
+transform greyscale ppmLoadSepia ppmLoadGreyscale
+greyscale red jpegLoad jpegLoadRed
+greyscale red pngLoad pngLoadRed
+greyscale red bmpLoad bmpLoadRed
+greyscale red ppmLoad ppmLoadRed
+greyscale green jpegLoad jpegLoadGreen
+greyscale green pngLoad pngLoadGreen
+greyscale green bmpLoad bmpLoadGreen
+greyscale green ppmLoad ppmLoadGreen
+greyscale blue jpegLoad jpegLoadBlue
+greyscale blue pngLoad pngLoadBlue
+greyscale blue bmpLoad bmpLoadBlue
+greyscale blue ppmLoad ppmLoadBlue
+greyscale value jpegLoad jpegLoadValue
+greyscale value pngLoad pngLoadValue
+greyscale value bmpLoad bmpLoadValue
+greyscale value ppmLoad ppmLoadValue
+greyscale intensity jpegLoad jpegLoadIntensity
+greyscale intensity pngLoad pngLoadIntensity
+greyscale intensity bmpLoad bmpLoadIntensity
+greyscale intensity ppmLoad ppmLoadIntensity
+greyscale luma jpegLoad jpegLoadLuma
+greyscale luma pngLoad pngLoadLuma
+greyscale luma bmpLoad bmpLoadLuma
+greyscale luma ppmLoad ppmLoadLuma
+brighten 10 jpegLoad jpegLoadBrighten
+brighten 0 pngLoad pngLoadBrighten
+brighten -30 bmpLoad bmpLoadBrighten
+brighten 120 ppmLoad ppmLoadBrighten
+vertical-flip jpegLoad jpegLoadVerticalFlip
+vertical-flip pngLoad pngLoadVerticalFlip
+vertical-flip bmpLoad bmpLoadVerticalFlip
+vertical-flip ppmLoad ppmLoadVerticalFlip
+horizontal-flip jpegLoad jpegLoadHorizontalFlip
+horizontal-flip pngLoad pngLoadHorizontalFlip
+horizontal-flip bmpLoad bmpLoadHorizontalFlip
+horizontal-flip ppmLoad ppmLoadHorizontalFlip
+save monsterNormal.jpeg jpegLoad
+save monsterLuma.png pngLoadLuma
+save monsterSepia.bmp bmpLoadSepia
+save monsterVerticalFlip.ppm ppmLoadVerticalFlip
+save monsterJpegToPng.png jpegLoad
+save monsterLumaPngToPpm.ppm pngLoadLuma
+save monsterSepiaBmpToJpeg.jpeg bmpLoadSepia
+save monsterVerticalFlipPpmToBmp.bmp ppmLoadVerticalFlip
+Q
+
